@@ -259,35 +259,35 @@ textarea {
 @font-face {
   font-family: "Montserrat";
   font-display: swap;
-  src: url("..fonts/Montserrat-Black.woff") format("woff"), url("..fonts/Montserrat-Black.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Black.woff") format("woff"), url("../fonts/Montserrat-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
   font-display: swap;
-  src: url("..fonts/Montserrat-ExtraBold.woff") format("woff"), url("..fonts/Montserrat-ExtraBold.woff2") format("woff2");
+  src: url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
   font-display: swap;
-  src: url("..fonts/Montserrat-Bold.woff") format("woff"), url("..fonts/Montserrat-Bold.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
   font-display: swap;
-  src: url("..fonts/Montserrat-SemiBold.woff") format("woff"), url("..fonts/Montserrat-SemiBold.woff2") format("woff2");
+  src: url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
   font-display: swap;
-  src: url("..fonts/Montserrat-Medium.woff") format("woff"), url("..fonts/Montserrat-Medium.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Medium.woff") format("woff"), url("../fonts/Montserrat-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
@@ -301,7 +301,7 @@ textarea {
 @font-face {
   font-family: "Montserrat";
   font-display: swap;
-  src: url("..fonts/Montserrat-Light.woff") format("woff"), url("..fonts/Montserrat-Light.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
 }
@@ -314,6 +314,19 @@ body {
   color: #000;
   font-family: "Montserrat";
   background-color: #fff;
+}
+
+.title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+@media screen and (min-width: 480px) {
+  .title {
+    font-size: 3rem;
+  }
 }
 
 .container {
@@ -341,4 +354,131 @@ body {
     padding: 0 80px;
     max-width: 1280px;
   }
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px 0;
+  background-color: #F0F5FB;
+  overflow: hidden;
+}
+
+.head-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 200;
+}
+
+.nav-link {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 19px;
+  color: #000;
+}
+
+.contact-worktime {
+  display: none;
+  position: relative;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 19px;
+}
+
+.contact-worktime::after {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #46CB72;
+  top: 7px;
+  left: -10px;
+}
+
+.contact-phone {
+  display: none;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(205, 169, 41, 0.26);
+  background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
+}
+
+.contact-num {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #000;
+  font-style: normal;
+}
+
+.header {
+  background: url("../img/header/bcg-first.png"), url("../img/header/bcg-sec.png");
+  background-size: contain 80%, contain 90%;
+  background-repeat: no-repeat;
+  background-position: 0 80%, -2% 5%;
+}
+
+.head__burger {
+  display: block;
+  width: 27px;
+}
+
+.burger-btn {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+.burger-btn::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  top: 10px;
+  background-color: #000;
+}
+
+.burger-btn::after {
+  position: absolute;
+  top: 5px;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+.hero {
+  padding-top: 50px;
+}
+
+.hero-subtitle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.1rem;
+  padding-top: 18px;
 }
