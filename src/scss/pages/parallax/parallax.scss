@@ -1,0 +1,25 @@
+.scene{
+    position: fixed;
+    height: 100vh;
+}
+// .scene-bc{
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 110%;
+//     height: 100%;
+// }
+.scene1{
+    width: 110%;
+    height: 100%;
+    background: url('../img/header/bcg-first.png');
+    background-size: contain;
+}
+.scene2{
+    width: 110%;
+    height: 100%;
+    background: url('../img/header/bcg-sec.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -2% 5%;
+}

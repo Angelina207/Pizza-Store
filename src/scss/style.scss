@@ -1,9 +1,19 @@
 @import "./general/reset";
 @import "./fonts";
-@import "./vars/vars.scss";
+@import "./vars/vars";
+
 @import "./general/body";
-@import "./pages/header";
-@import "./pages/hero";
-@import "./pages/network";
-@import "./pages/products";
-@import "./pages/footer";
+
+@import "./pages/header/header";
+@import "./pages/header/head-burger";
+
+@import "./pages/hero/hero";
+
+@import "./pages/products/products";
+@import "./pages/products/prod-pizza";
+
+@import "./pages/network/network";
+
+@import "./pages/foo/footer";
+
+@import "./pages/parallax/parallax";

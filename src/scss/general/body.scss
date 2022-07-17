@@ -8,6 +8,19 @@ body {
     font-family: "Montserrat";
     background-color: #fff;
 }
+.title{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2rem;
+    @media screen and (min-width: 480px) {
+        font-size: 3rem;
+    }
+}
+button {
+    font-family: "Montserrat";
+}
 .container{
     padding: 0 20px;
     margin: 0 auto;

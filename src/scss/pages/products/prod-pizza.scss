@@ -1,0 +1,71 @@
+.product__card{
+   padding-top: 86px;
+   display: grid; 
+   grid-gap: 50px;
+   justify-content: center;
+}
+.card-item{
+    position: relative;
+    max-width: calc(260px - 34px);
+    padding: 190px 15px 45px;
+    border-radius: 10px;
+    border: 2px solid #ECEEF7;
+    background-color: transparent;
+}
+.card-img{
+    position: absolute;
+    top: 40px;
+    left: 25%;
+    width: 170px;
+    height: 170px;
+}
+.card-head{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.card-title{
+    line-height: 22px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.card-size{
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+.card-desc{
+    padding-top: 8px;
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+.card-price{
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding-top: 19px;
+    display: flex;
+    justify-content: center;
+}
+.card-bin{
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 16.5px);
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #ECEEF7;
+}
+.card-bin-svg{
+    fill: #F58656;
+}
+.card-bin:hover,
+.card-bin:focus {
+    background: $bcg-gradient;
+    box-shadow: $bcg-shadow;
+}
+.card-bin:hover > .card-bin-svg,
+.card-bin:focus > .card-bin-svg {
+    fill: #fff;
+}

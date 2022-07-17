@@ -1,0 +1,36 @@
+.head__burger{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: solid 2px $accentSec;
+    border-radius: 50%;
+    z-index: 30;
+}
+.burger-btn{
+    background-color: $accentSec;
+    transition: all 300ms;
+}
+.burger-btn1{
+    position: absolute;
+    width: 50%;
+    height: 2px;
+}
+.burger-btn2{
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    transform: rotate(90deg);
+}
+.head__burger:hover,
+.head__burger:focus{
+    background-color: $bcg-gradient;
+    box-shadow: $bcg-shadow;
+}
+@media screen and(min-width: 1024px) {
+    .head__burger{
+        display: none;
+    }
+}
