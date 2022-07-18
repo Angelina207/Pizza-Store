@@ -1,5 +1,5 @@
 .product{
-    padding-top: 31px;
+    padding: 61px 0 120px;
     background-color: #fff;
 }
 
@@ -46,13 +46,14 @@
 
 // Product Bin
 .product-bin{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .bin-total{
     position: relative;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 70px;
@@ -73,8 +74,9 @@
     fill: #3F3F3FFF;
 }
 .bin-link{
-    position: relative;
-    margin-left: 40px;
+    position: absolute;
+    top: -60px;
+    right: 0;
 }
 .bin-bag{
     display: flex;
@@ -104,6 +106,27 @@
     border-radius: 50%;
 }
 
+// Button Update
+
+.product__btn-update{
+    display: flex;
+    justify-content: center;
+}
+.btn-update{
+    margin-top: 85px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $bcg-gradient;
+    transition: 250ms;
+}
+.btn-update:hover,
+.btn-update:focus {
+    box-shadow: 0px 4px 8px rgba(205, 71, 71, 1.26);
+}
+.btn-update-svg{
+    transition: all 1000ms ease-out;
+}
 @media screen and (min-width: 768px) {
     .product__tab{
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -112,7 +135,7 @@
         width: auto;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     .product__tab{
         grid-template-columns: 145px 145px 145px 145px 145px;
         justify-items: center;

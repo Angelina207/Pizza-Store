@@ -8,9 +8,37 @@
     position: relative;
     max-width: calc(260px - 34px);
     padding: 190px 15px 45px;
-    border-radius: 10px;
-    border: 2px solid #ECEEF7;
     background-color: transparent;
+    transition: all 250ms;
+}
+// .card-item--hidden{
+//     display: none;
+// }
+.card-topseller{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 6px 0;
+    width: 60px;
+    color: #fff;
+    background: $bcg-gradient;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    box-shadow: 0px 4px 8px rgba(205, 71, 41, 0.26);
+}
+.card-border-svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    stroke-width: 2px;
+    stroke: #ECEEF6;
+}
+.card-item:hover .card-border-svg,
+.card-item:focus .card-border-svg {
+    filter: drop-shadow(0px 4px 8px rgba(205, 71, 41, 0.26));
 }
 .card-img{
     position: absolute;
@@ -49,8 +77,8 @@
 }
 .card-bin{
     position: absolute;
-    bottom: 0;
-    left: calc(50% - 16.5px);
+    bottom: -20px;
+    left: calc(50% - 15px);
     width: 33px;
     height: 33px;
     border-radius: 50%;
@@ -58,7 +86,7 @@
     border: 2px solid #ECEEF7;
 }
 .card-bin-svg{
-    fill: #F58656;
+    fill: $accentSec;
 }
 .card-bin:hover,
 .card-bin:focus {
@@ -68,4 +96,32 @@
 .card-bin:hover > .card-bin-svg,
 .card-bin:focus > .card-bin-svg {
     fill: #fff;
+}
+
+@media screen and(min-width: 768px) {
+    .product__card{
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        grid-gap: 70px 0;
+     }
+}
+@media screen and(min-width: 1024px) {
+    .product__card{
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        grid-gap: 70px 0;
+     }
+     .card-item--hidden{
+        display: block;
+    }
+}
+@media screen and(min-width: 1440px) {
+    .product__card{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        grid-gap: 70px 0;
+     }
+     .card-item--hidden{
+        display: block;
+    }
 }
