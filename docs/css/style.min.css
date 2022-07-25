@@ -361,11 +361,12 @@ button {
 }
 
 .header {
+  overflow: hidden;
   position: relative;
   height: 100vh;
+  width: 100vw;
   padding: 20px 0;
   background-color: #F0F5FB;
-  overflow: hidden;
 }
 
 .head-content {
@@ -385,7 +386,7 @@ button {
   width: calc(100% - 40px);
   height: 100vh;
   background-color: #fff;
-  z-index: 20;
+  z-index: 155;
   transition: 400ms;
   background-image: url("../img/header/bcg-sec.png");
   background-repeat: repeat;
@@ -468,6 +469,18 @@ button {
   margin-left: 10px;
 }
 
+.overlay {
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 150;
+  transition: opacity 250ms ease;
+}
+
 @media screen and (min-width: 480px) {
   .head__nav {
     position: fixed;
@@ -523,7 +536,7 @@ button {
   height: 35px;
   border: solid 2px #F58656;
   border-radius: 50%;
-  z-index: 30;
+  z-index: 160;
 }
 
 .burger-btn {
@@ -574,8 +587,9 @@ button {
   }
 }
 .product {
-  padding: 61px 0 120px;
+  padding: 81px 0 120px;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .product__tab {
@@ -620,7 +634,7 @@ button {
   clip-path: circle(200px);
 }
 
-.product-bin {
+.product__bin {
   position: relative;
   display: flex;
   justify-content: center;
@@ -628,8 +642,11 @@ button {
 }
 
 .bin-total {
-  position: relative;
-  display: none;
+  position: absolute;
+  top: -75px;
+  right: 80px;
+  opacity: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 70px;
@@ -640,6 +657,7 @@ button {
   padding: 5px 10px;
   background-color: #3f3f3f;
   font-size: 1.1rem;
+  transition: opacity ease 1s, transform 250ms;
 }
 
 .bin-total-icon {
@@ -653,11 +671,12 @@ button {
 
 .bin-link {
   position: absolute;
-  top: -60px;
+  top: -80px;
   right: 0;
 }
 
 .bin-bag {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   width: 60px;
@@ -669,6 +688,11 @@ button {
 
 .bin-icon {
   width: 30px;
+}
+
+.bin-link:hover > .bin-bag,
+.bin-link:focus > .bin-bag {
+  border: 2px solid #F58656;
 }
 
 .bin-quantity {
@@ -707,7 +731,7 @@ button {
 }
 
 .btn-update-svg {
-  transition: all 1000ms ease-out;
+  transition: all 1000ms ease;
 }
 
 @media screen and (min-width: 768px) {
@@ -740,6 +764,11 @@ button {
   padding: 190px 15px 45px;
   background-color: transparent;
   transition: all 250ms;
+  z-index: 0;
+}
+
+.card-item--is-show {
+  display: none;
 }
 
 .card-topseller {
@@ -764,11 +793,14 @@ button {
   left: 0;
   stroke-width: 2px;
   stroke: #ECEEF6;
+  transition: stroke 250ms ease;
 }
 
 .card-item:hover .card-border-svg,
 .card-item:focus .card-border-svg {
+  stroke: #F58656;
   filter: drop-shadow(0px 4px 8px rgba(205, 71, 41, 0.26));
+  opacity: 0.5;
 }
 
 .card-img {
@@ -812,29 +844,51 @@ button {
   justify-content: center;
 }
 
-.card-bin {
-  position: absolute;
-  bottom: -20px;
+.card__btn-bin {
+  position: relative;
+  bottom: -30px;
   left: calc(50% - 15px);
+}
+
+.btn-bin {
+  position: absolute;
   width: 33px;
   height: 33px;
   border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid #ECEEF7;
+  background-color: #fff;
 }
 
-.card-bin-svg {
+.btn-bin::after {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  content: "";
+  width: 37px;
+  height: 37px;
+  background-image: #ECEEF7;
+  display: inline-block;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.btn-bin-svg {
+  transition: fill 250ms ease;
   fill: #F58656;
 }
 
-.card-bin:hover,
-.card-bin:focus {
+.btn-bin:hover,
+.btn-bin:focus {
   background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
   box-shadow: 0px 4px 8px rgba(205, 169, 41, 0.26);
 }
 
-.card-bin:hover > .card-bin-svg,
-.card-bin:focus > .card-bin-svg {
+.btn-bin:hover::after,
+.btn-bin:focus::after {
+  background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
+}
+
+.btn-bin:hover > .btn-bin-svg,
+.btn-bin:focus > .btn-bin-svg {
   fill: #fff;
 }
 
@@ -851,7 +905,7 @@ button {
     justify-items: center;
     grid-gap: 70px 0;
   }
-  .card-item--hidden {
+  .card-item--is-show {
     display: block;
   }
 }
@@ -978,23 +1032,196 @@ button {
     border-radius: 15px;
   }
 }
-.scene {
-  position: fixed;
-  height: 100vh;
+.foo {
+  padding-top: 70px;
+  padding-bottom: 30px;
 }
 
-.scene1 {
-  width: 110%;
-  height: 100%;
-  background: url("../img/header/bcg-first.png");
-  background-size: contain;
+.foo-form {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  margin: 30px auto 0;
 }
 
-.scene2 {
-  width: 110%;
+.foo-input {
+  position: relative;
+  width: calc(100% - 64px);
+  padding: 20.5px 30px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 59px;
+}
+
+.foo-input::-webkit-outer-spin-button,
+.foo-input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.foo-input::placeholder {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #222222;
+}
+
+.foo-btn-call {
+  background: linear-gradient(180deg, #FE5626 0%, #F23F0E 100%), #59AAF1;
+  box-shadow: 0px 4px 8px rgba(205, 169, 41, 0.26);
+  width: 100%;
+  height: 60px;
+  border-radius: 59px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  transition: box-shadow 250ms ease;
+}
+
+.foo-btn-call:hover,
+.foo-btn-call:focus {
+  box-shadow: 0px 4px 8px rgb(205, 71, 71);
+}
+
+.foo-btn-icon {
+  padding-left: 30px;
+}
+
+.foo-input-wrapp {
+  position: relative;
+}
+
+.foo-input-wrapp::after {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  content: "";
+  width: 100%;
+  height: calc(100% + 4px);
+  background-color: #ECEEF6;
+  border-radius: 59px;
+  z-index: -2;
+}
+
+.foo-input-wrapp:nth-child(2) {
+  margin: 20px 0;
+}
+
+.foo-input-wrapp:focus::after,
+.foo-input-wrapp:hover::after {
+  background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
+}
+
+.foo-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 55px;
+}
+
+.foo-logo {
+  position: absolute;
+  top: 55px;
+}
+
+.foo-author {
+  padding-top: 90px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.foo-desc {
+  padding-top: 20px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.foo-desc-bold {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .foo-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .foo-logo {
+    position: static;
+  }
+  .foo-author {
+    padding-top: 0;
+  }
+  .foo-desc {
+    padding-top: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .foo-form {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 30px auto 0;
+  }
+  .foo-input {
+    width: 196px;
+  }
+  .foo-input-wrapp {
+    width: 260px;
+    height: 60px;
+  }
+  .foo-input-wrapp::after {
+    width: 100%;
+    height: 100%;
+  }
+  .foo-input-wrapp:nth-child(2) {
+    margin: 0;
+  }
+  .foo-btn-call {
+    width: 260px;
+  }
+}
+.header__parallax {
+  width: inherit;
   height: 100%;
-  background: url("../img/header/bcg-sec.png");
-  background-size: contain;
+  background: url("../img/parallax/bcg-first.png");
+  background-size: 95%;
   background-repeat: no-repeat;
-  background-position: -2% 5%;
+  background-position: center 50%;
+}
+
+.parallax {
+  width: inherit;
+  height: inherit;
+  background-image: url("../img/parallax/bcg-sec.png");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: center 60%;
+}
+
+.parallax-body {
+  width: inherit;
+  height: inherit;
+  background-image: url("../img/parallax/bcg-pizza.png");
+  background-size: 80% auto;
+  background-repeat: no-repeat;
+  background-position: 80% 80%;
+}
+
+@media screen and (min-width: 480px) {
+  .parallax-body {
+    background-size: 60% auto;
+    background-position: 60% 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__parallax {
+    background-position: 100% 45%;
+  }
+  .parallax {
+    background-position: center 50%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .parallax-body {
+    background-size: 700px auto;
+  }
 }
