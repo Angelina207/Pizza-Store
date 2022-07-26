@@ -365,8 +365,17 @@ button {
   position: relative;
   height: 100vh;
   width: 100vw;
-  padding: 20px 0;
-  background-color: #F0F5FB;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 80px;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .head-content {
@@ -388,7 +397,7 @@ button {
   background-color: #fff;
   z-index: 155;
   transition: 400ms;
-  background-image: url("../img/header/bcg-sec.png");
+  background-image: url("../img/parallax/bcg-first.png");
   background-repeat: repeat;
   background-position: 0 0;
 }
@@ -470,15 +479,15 @@ button {
 }
 
 .overlay {
+  display: none;
   background-color: #000;
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0;
+  opacity: 0.7;
   z-index: 150;
-  transition: opacity 250ms ease;
 }
 
 @media screen and (min-width: 480px) {
@@ -1198,18 +1207,31 @@ button {
 }
 
 .parallax-body {
+  position: relative;
   width: inherit;
   height: inherit;
   background-image: url("../img/parallax/bcg-pizza.png");
   background-size: 80% auto;
   background-repeat: no-repeat;
   background-position: 80% 80%;
+  padding-top: 20px;
+}
+
+.parallax-body::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background-color: #eef3f9;
+  z-index: -2;
 }
 
 @media screen and (min-width: 480px) {
   .parallax-body {
     background-size: 60% auto;
-    background-position: 60% 100%;
+    background-position: 60% 90%;
   }
 }
 @media screen and (min-width: 768px) {
