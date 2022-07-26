@@ -1,6 +1,7 @@
-.product{
-    padding: 61px 0 120px;
+ .product{
+    padding: 81px 0 120px;
     background-color: #fff;
+    overflow: hidden;
 }
 
 // Product Tabs
@@ -45,15 +46,18 @@
 }
 
 // Product Bin
-.product-bin{
+.product__bin{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .bin-total{
-    position: relative;
-    display: none;
+    position: absolute;
+    top: -75px;
+    right: 80px;
+    opacity: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 70px;
@@ -64,6 +68,7 @@
     padding: 5px 10px;
     background-color: #3F3F3FFF;
     font-size: 1.1rem;
+    transition: opacity ease 1s, transform (250ms);
 }
 .bin-total-icon{
     position: absolute;
@@ -75,10 +80,11 @@
 }
 .bin-link{
     position: absolute;
-    top: -60px;
+    top: -80px;
     right: 0;
 }
 .bin-bag{
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     width: 60px;
@@ -89,6 +95,10 @@
 }
 .bin-icon{
     width: 30px;
+}
+.bin-link:hover > .bin-bag,
+.bin-link:focus > .bin-bag {
+    border: 2px solid $accentSec;
 }
 .bin-quantity{
     position: absolute;
@@ -125,7 +135,7 @@
     box-shadow: 0px 4px 8px rgba(205, 71, 71, 1.26);
 }
 .btn-update-svg{
-    transition: all 1000ms ease-out;
+    transition: all 1000ms ease;
 }
 @media screen and (min-width: 768px) {
     .product__tab{

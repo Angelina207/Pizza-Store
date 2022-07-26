@@ -1,25 +1,68 @@
-.scene{
-    position: fixed;
-    height: 100vh;
-}
-// .scene-bc{
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 110%;
-//     height: 100%;
-// }
-.scene1{
-    width: 110%;
+// Vegetable Gray 
+.header__parallax{
+    width: inherit;
     height: 100%;
-    background: url('../img/header/bcg-first.png');
-    background-size: contain;
-}
-.scene2{
-    width: 110%;
-    height: 100%;
-    background: url('../img/header/bcg-sec.png');
-    background-size: contain;
+    background: url('../img/parallax/bcg-first.png');
+    background-size: 95%;
     background-repeat: no-repeat;
-    background-position: -2% 5%;
+    background-position: center 50%;
+}
+
+//Vegetable Color
+.parallax{
+    width: inherit;
+    height: inherit;
+    background-image: url('../img/parallax/bcg-sec.png');
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+}
+// Pizza
+.parallax-body{
+    position: relative;
+    width: inherit;
+    height: inherit;
+    background-image: url('../img/parallax/bcg-pizza.png');
+    background-size: 80% auto;
+    background-repeat: no-repeat;
+    background-position: 80% 80%;
+    padding-top: 20px;
+}
+.parallax-body::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background-color: #EEF3F9FF;
+    z-index: -2;
+}
+
+@media screen and(min-width: 480px) {
+
+    // Pizza
+    .parallax-body{
+        background-size: 60% auto;
+        background-position: 60% 90%;
+    }
+}
+
+@media screen and(min-width: 768px) {
+
+    // Vegetable Gray 
+    .header__parallax{
+        background-position: 100% 45%;
+    }
+
+    // Vegetable Color
+    .parallax{
+        background-position: center 50%;
+    }
+}
+
+@media screen and(min-width: 1024px) {
+    .parallax-body{
+        background-size: 700px auto;
+    }
 }
