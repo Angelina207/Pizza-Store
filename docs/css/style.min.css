@@ -1191,7 +1191,7 @@ button {
 .header__parallax {
   width: inherit;
   height: 100%;
-  background: url("../img/parallax/bcg-first.png");
+  background: url("/img/parallax/bcg-first.png");
   background-size: 95%;
   background-repeat: no-repeat;
   background-position: center 50%;
@@ -1200,7 +1200,7 @@ button {
 .parallax {
   width: inherit;
   height: inherit;
-  background-image: url("../img/parallax/bcg-sec.png");
+  background-image: url("/img/parallax/bcg-sec.png");
   background-size: 110%;
   background-repeat: no-repeat;
   background-position: center 60%;
@@ -1210,7 +1210,7 @@ button {
   position: relative;
   width: inherit;
   height: inherit;
-  background-image: url("../img/parallax/bcg-pizza.png");
+  background-image: url("/img/parallax/bcg-pizza.png");
   background-size: 80% auto;
   background-repeat: no-repeat;
   background-position: 80% 80%;
