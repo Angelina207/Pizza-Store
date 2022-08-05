@@ -1,68 +1,76 @@
-// Vegetable Gray 
-.header__parallax{
-    width: inherit;
-    height: 100%;
-    background: url('../img/parallax/bcg-first.png');
-    background-size: 95%;
-    background-repeat: no-repeat;
-    background-position: center 50%;
-}
-
-//Vegetable Color
-.parallax{
-    width: inherit;
-    height: inherit;
-    background-image: url('../img/parallax/bcg-sec.png');
-    background-size: 110%;
-    background-repeat: no-repeat;
-    background-position: center 60%;
-}
-// Pizza
-.parallax-body{
-    position: relative;
-    width: inherit;
-    height: inherit;
-    background-image: url('../img/parallax/bcg-pizza.png');
-    background-size: 80% auto;
-    background-repeat: no-repeat;
-    background-position: 80% 80%;
-    padding-top: 20px;
-}
-.parallax-body::after{
-    position: absolute;
+// Header Parallax
+.scene{
+    position: fixed;
     top: 0;
-    left: 0;
-    content: '';
-    width: 100vw;
+    left: -5%;
+    width: 110%;
+    height: 85%;
+    background-color: $bcg-color;
+}
+.scene__layer{
+    position: absolute;
+    width: 110%;
     height: 100vh;
-    background-color: #EEF3F9FF;
-    z-index: -2;
+    background-repeat: no-repeat;
+}
+.layer-1{
+    background-image: url('/img/parallax/bcg-first.png');
+    background-size: 80% auto;
+    background-position: 25% 65%;
+}
+.layer-2{
+    background-image: url('/img/parallax/bcg-sec.png');
+    background-size: 80% auto;
+    background-position: 0% 70%;
+}
+.layer-3{
+    background-image: url('/img/parallax/bcg-pizza.png');
+    background-size: 75% auto;
+    background-position: 45% 90%;
 }
 
-@media screen and(min-width: 480px) {
-
-    // Pizza
-    .parallax-body{
+@media screen and (min-width: 480px) {
+    .layer-3{
         background-size: 60% auto;
-        background-position: 60% 90%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .layer-3{
+        background-size: 50% auto;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .layer-3{
+        background-size: 40% auto;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .layer-3{
+        background-size: 35% auto;
     }
 }
 
-@media screen and(min-width: 768px) {
-
-    // Vegetable Gray 
-    .header__parallax{
-        background-position: 100% 45%;
-    }
-
-    // Vegetable Color
-    .parallax{
-        background-position: center 50%;
-    }
+// Footer Parallax
+.scene-foo{
+    position: fixed;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 85%;
+    // background-color: $bcg-color;
 }
-
-@media screen and(min-width: 1024px) {
-    .parallax-body{
-        background-size: 700px auto;
-    }
+.foo-layer{
+    position: absolute;
+    width: 110%;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+.foo-bc1{
+    // background-image: url('/img/footer/foo-vegitable.png');
+    // width: 100%;
+}
+.foo-bc2{
+    background-image: url('/img/parallax/car.png');
+    background-position: center;
+    background-size: 45% auto;
 }

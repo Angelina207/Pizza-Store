@@ -1,7 +1,8 @@
  .product{
+    position: relative;
     padding: 81px 0 120px;
-    background-color: #fff;
     overflow: hidden;
+    background-color: #fff;
 }
 
 // Product Tabs
@@ -43,6 +44,10 @@
 .tab-btn:hover:before,
 .tab-btn:focus:before {
     clip-path: circle(200px);
+}
+.tab-btn-current{
+    background-color: $accent;
+    color: #fff;
 }
 
 // Product Bin
