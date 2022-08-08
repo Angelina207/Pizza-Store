@@ -1,18 +1,10 @@
 .foo{
     position: relative;
+    height: calc(100vh - 70px);
+    width: 100vw;
     padding-top: 70px;
     background-color: $bcg-color;
     z-index: -1;
-}
-.foo::after{
-    content: '';
-    width: 100%;
-    height: 22%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    z-index: -2;
 }
 
 // Connecting Form
@@ -80,47 +72,7 @@
 .foo-input-wrapp:hover::after{
     background: $bcg-gradient;
 }
-// Logo
-.foo-info{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 250px 0 50px;
-}
-.foo-logo{
-    position: absolute;
-    top: 55px;
-}
-.foo-author{
-    padding-top: 90px;
-    font-weight: 400;
-    font-size: 1rem;
-}
-.foo-desc{
-    padding-top: 20px;
-    font-weight: 400;
-    font-size: 1rem;
-}
-.foo-desc-bold{
-    font-weight: 700;
-}
 
-@media screen and( min-width: 768px) {
-    .foo-info{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .foo-logo{
-        position:static;
-    }
-    .foo-author{
-        padding-top: 0;
-    }
-    .foo-desc{
-        padding-top: 0;
-    }
-}
 @media screen and( min-width: 1024px) {
     .foo-form{
         flex-direction: row;

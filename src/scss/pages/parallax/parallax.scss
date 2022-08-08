@@ -51,26 +51,10 @@
 }
 
 // Footer Parallax
-.scene-foo{
-    position: fixed;
-    top: 0;
-    left: -5%;
-    width: 110%;
-    height: 85%;
-    // background-color: $bcg-color;
-}
-.foo-layer{
+.foo-scene{
     position: absolute;
-    width: 110%;
-    height: 100vh;
-    background-repeat: no-repeat;
-}
-.foo-bc1{
-    // background-image: url('/img/footer/foo-vegitable.png');
-    // width: 100%;
-}
-.foo-bc2{
-    background-image: url('/img/parallax/car.png');
-    background-position: center;
-    background-size: 45% auto;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
