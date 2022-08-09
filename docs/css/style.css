@@ -314,6 +314,7 @@ body {
   color: #000;
   font-family: "Montserrat";
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 .title {
@@ -361,27 +362,12 @@ button {
 }
 
 .header {
-  overflow: hidden;
   position: relative;
   height: 100vh;
   width: 100vw;
-}
-
-.header::after {
-  content: "";
-  position: absolute;
-  width: 100vw;
-  height: 80px;
-  background-color: #fff;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.head-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-top: 20px;
+  background-color: transparent;
+  overflow-x: hidden;
 }
 
 .head__nav {
@@ -397,7 +383,6 @@ button {
   background-color: #fff;
   z-index: 155;
   transition: 400ms;
-  background-image: url("../img/parallax/bcg-first.png");
   background-repeat: repeat;
   background-position: 0 0;
 }
@@ -502,10 +487,10 @@ button {
   }
 }
 @media screen and (min-width: 1024px) {
-  .head__logo {
+  .head__logo-header {
     position: absolute;
     top: 20px;
-    left: calc(50% - 65px);
+    left: calc(50% - 75px);
   }
   .head__nav {
     position: static;
@@ -536,8 +521,14 @@ button {
     margin: 0 0 0 40px;
   }
 }
-.head__burger {
+.header-container {
   position: relative;
+}
+
+.head__burger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -596,9 +587,10 @@ button {
   }
 }
 .product {
+  position: relative;
   padding: 81px 0 120px;
-  background-color: #fff;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .product__tab {
@@ -641,6 +633,11 @@ button {
 .tab-btn:hover:before,
 .tab-btn:focus:before {
   clip-path: circle(200px);
+}
+
+.tab-btn-current {
+  background-color: #59AAF1;
+  color: #fff;
 }
 
 .product__bin {
@@ -874,7 +871,7 @@ button {
   content: "";
   width: 37px;
   height: 37px;
-  background-image: #ECEEF7;
+  background: #ECEEF7;
   display: inline-block;
   border-radius: 50%;
   z-index: -1;
@@ -1042,8 +1039,13 @@ button {
   }
 }
 .foo {
+  position: relative;
+  height: calc(100vh - 70px);
+  width: 100vw;
   padding-top: 70px;
-  padding-bottom: 30px;
+  background-color: #F0F5FB;
+  z-index: 1;
+  overflow-x: hidden;
 }
 
 .foo-form {
@@ -1119,48 +1121,9 @@ button {
   background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
 }
 
-.foo-info {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 55px;
-}
-
-.foo-logo {
-  position: absolute;
-  top: 55px;
-}
-
-.foo-author {
-  padding-top: 90px;
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-.foo-desc {
-  padding-top: 20px;
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-.foo-desc-bold {
-  font-weight: 700;
-}
-
 @media screen and (min-width: 768px) {
-  .foo-info {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .foo-logo {
-    position: static;
-  }
-  .foo-author {
-    padding-top: 0;
-  }
-  .foo-desc {
-    padding-top: 0;
+  .foo {
+    height: calc(100vh - 200px);
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1188,62 +1151,168 @@ button {
     width: 260px;
   }
 }
-.header__parallax {
-  width: inherit;
-  height: 100%;
-  background: url("/img/parallax/bcg-first.png");
-  background-size: 95%;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-}
-
-.parallax {
-  width: inherit;
-  height: inherit;
-  background-image: url("/img/parallax/bcg-sec.png");
-  background-size: 110%;
-  background-repeat: no-repeat;
-  background-position: center 60%;
-}
-
-.parallax-body {
+.logo-wrapp {
   position: relative;
-  width: inherit;
-  height: inherit;
-  background-image: url("/img/parallax/bcg-pizza.png");
-  background-size: 80% auto;
-  background-repeat: no-repeat;
-  background-position: 80% 80%;
-  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
 }
 
-.parallax-body::after {
+.logo-img {
   position: absolute;
+  top: 30px;
+}
+
+.logo-author {
+  padding-top: 85px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.logo-desc {
+  padding-top: 20px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.logo-desc-bold {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-wrapp {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo-img {
+    position: static;
+  }
+  .logo-author {
+    padding-top: 0;
+  }
+  .logo-desc {
+    padding-top: 0;
+  }
+}
+.scene {
+  position: fixed;
   top: 0;
-  left: 0;
-  content: "";
-  width: 100vw;
+  left: -5%;
+  width: 110%;
+  height: 85%;
+  background-color: #F0F5FB;
+}
+
+.scene__layer {
+  position: absolute;
+  width: 110%;
   height: 100vh;
-  background-color: #eef3f9;
-  z-index: -2;
+  background-repeat: no-repeat;
+}
+
+.layer-1 {
+  background-image: url("/img/parallax/bcg-first.png");
+  background-size: 80% auto;
+  background-position: 25% 65%;
+}
+
+.layer-2 {
+  background-image: url("/img/parallax/bcg-sec.png");
+  background-size: 80% auto;
+  background-position: 0% 70%;
+}
+
+.layer-3 {
+  background-image: url("/img/parallax/bcg-pizza.png");
+  background-size: 75% auto;
+  background-position: 45% 90%;
 }
 
 @media screen and (min-width: 480px) {
-  .parallax-body {
+  .layer-3 {
     background-size: 60% auto;
-    background-position: 60% 90%;
   }
 }
 @media screen and (min-width: 768px) {
-  .header__parallax {
-    background-position: 100% 45%;
-  }
-  .parallax {
-    background-position: center 50%;
+  .layer-3 {
+    background-size: 50% auto;
   }
 }
 @media screen and (min-width: 1024px) {
-  .parallax-body {
-    background-size: 700px auto;
+  .layer-3 {
+    background-size: 40% auto;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .layer-3 {
+    background-size: 35% auto;
+  }
+}
+.foo-scene {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: -5%;
+  width: 108%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.foo-layer1 {
+  background-image: url("/img/parallax/foo-layer1.png");
+  background-position: center 95%;
+  background-size: 95% auto;
+}
+
+.foo-layer2 {
+  background-image: url("/img/parallax/foo-layer2.png");
+  background-position: center 90%;
+  background-size: 100% auto;
+}
+
+.foo-layer3 {
+  background-image: url("/img/parallax/foo-layer3.png");
+  background-position: center 100%;
+  background-size: 85% auto;
+}
+
+@media screen and (min-width: 480px) {
+  .foo-layer3 {
+    background-position: center 110%;
+    background-size: 80% auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .foo-layer3 {
+    background-size: 70% auto;
+    background-position: center 125%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .foo-layer2 {
+    background-position: center 100%;
+    background-size: 95% auto;
+  }
+  .foo-layer3 {
+    background-position: center 140%;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .foo-layer2 {
+    background-position: center 100%;
+    background-size: 95% auto;
+  }
+  .foo-layer3 {
+    background-size: 60% auto;
+    background-position: center 155%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .foo-layer2 {
+    background-position: center 0%;
+  }
+  .foo-layer3 {
+    background-position: center 185%;
   }
 }
