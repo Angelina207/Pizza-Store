@@ -364,7 +364,7 @@ button {
 .header {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  min-width: 100vw;
   padding-top: 20px;
   background-color: transparent;
   overflow-x: hidden;
@@ -588,7 +588,7 @@ button {
 }
 .product {
   position: relative;
-  padding: 81px 0 120px;
+  padding: 80px 0 120px;
   overflow: hidden;
   background-color: #fff;
 }
@@ -1196,57 +1196,60 @@ button {
   }
 }
 .scene {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: -5%;
-  width: 110%;
+  left: 0;
+  min-width: 100%;
   height: 85%;
   background-color: #F0F5FB;
 }
 
 .scene__layer {
   position: absolute;
-  width: 110%;
-  height: 100vh;
+  width: 100%;
+  height: 90vh;
   background-repeat: no-repeat;
 }
 
 .layer-1 {
-  background-image: url("../img/parallax/bcg-first.png");
-  background-size: 80% auto;
-  background-position: 25% 65%;
+  background-image: url("/img/parallax/bcg-first.png");
+  background-size: 100% auto;
+  background-position: 25% 85%;
 }
 
 .layer-2 {
-  background-image: url("../img/parallax/bcg-sec.png");
-  background-size: 80% auto;
-  background-position: 0% 70%;
+  background-image: url("/img/parallax/bcg-sec.png");
+  background-size: 100% auto;
+  background-position: 0% 90%;
+  left: -5%;
 }
 
 .layer-3 {
-  background-image: url("../img/parallax/bcg-pizza.png");
-  background-size: 75% auto;
-  background-position: 45% 90%;
+  background-image: url("/img/parallax/bcg-pizza.png");
+  background-size: 85% auto;
+  background-position: 100% 100%;
+  bottom: -10%;
 }
 
 @media screen and (min-width: 480px) {
   .layer-3 {
-    background-size: 60% auto;
+    background-size: 65% auto;
+    background-position: 60% 90%;
   }
 }
 @media screen and (min-width: 768px) {
   .layer-3 {
-    background-size: 50% auto;
+    background-size: 55% auto;
   }
 }
 @media screen and (min-width: 1024px) {
+  .layer-1 {
+    background-size: 90% auto;
+    background-position: 50% 35%;
+  }
   .layer-3 {
     background-size: 40% auto;
-  }
-}
-@media screen and (min-width: 1600px) {
-  .layer-3 {
-    background-size: 35% auto;
+    background-position: center 80%;
   }
 }
 .foo-scene {
