@@ -9,12 +9,15 @@
 </head>
 <body>
 	<!-- Parallax Scene -->
-    <div class="scene">
+    <!-- <div class="scene">
         <div data-speed="10" class="scene__layer layer-1"></div>
-        <div data-speed="40" class="scene__layer layer-2"></div>
+        <div data-speed="30" class="scene__layer layer-2"></div>
         <div data-speed="80" class="scene__layer layer-3"></div>
-    </div>
+    </div> -->
 
+    <!-- <header  class="header">
+
+    </header> -->
 <!-- Header -->
     <header class="header">
         <div class="container header-container">
@@ -62,55 +65,8 @@
             </section>
         </div>
     </header>
-
-<!-- <header class="header">
-    <div class="container head-container"> -->
-        <!-- Header Logo-->
-        <!-- <div class="head__logo-header">
-            <a href="index.html" class="logo-header-link">
-                <img src="img/header/logo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="head__burger">
-            <div class="burger-btn burger-btn1"></div>
-            <div class="burger-btn burger-btn2"></div>
-        </div> -->
-
-        <!-- Nav Bar -->
-        <!-- <nav class="head__nav">
-            <div class="nav-list-link">
-                <a href="#product" class="nav-link">Payment</a>
-                <a href="#about" class="nav-link">About us</a>
-                <a href="#contact" class="nav-link">Contacts</a>
-            </div> -->
-
-            <!-- <div class="head-contact">
-                <p class="contact-worktime">
-                    Daily 11am - 9pm
-                </p>
-                <div class="contact-phone">
-                    <div class="contact-item">
-                        <svg class="contact-svg" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.877 9.19a7.948 7.948 0 01-2.497-.398c-.39-.134-.87-.011-1.11.234l-1.574 1.188c-1.825-.974-2.95-2.099-3.91-3.91L4.938 4.77c.3-.299.407-.736.278-1.146a7.96 7.96 0 01-.4-2.5C4.818.503 4.315 0 3.695 0h-2.57C.503 0 0 .504 0 1.123 0 8.223 5.776 14 12.877 14c.619 0 1.123-.504 1.123-1.123v-2.564c0-.62-.504-1.124-1.123-1.124z" fill="#fff"/></svg>
-                    </div>
-                    <a href="tel:0800330898" class="contact-num">
-                        0 800 33 08 98
-                    </a>
-                </div>
-            </div>
-        </nav>
-        <div class="overlay"></div> -->
-        <!-- Hero -->
-        <!-- <section class="hero">
-            <h2 class="title">
-                Food delivery in Kovel
-            </h2>
-            <p class="hero-subtitle">
-                If you decide to relax or have unexpected guests, call us. We make <br> sure that your vacation is comfortable, enjoyable and delicious
-            </p>
-        </section>
-    </div>
-</header> -->
-	<section class="product" id="product">
+	<main>
+		<section class="product" id="product">
     <div class="product__product-bcg">
 
         <!-- <img class="product-bcg" src="img/pizza-order/bcg-hand.png" alt="Hand">
@@ -323,7 +279,7 @@
         </div>
     </div>
 </section>
-	<section class="network" id="about">
+		<section class="network" id="about">
     <div class="network__bcg-slider">
         <div class="bcg-slider-wrapp">
             <img class="bcg-slider-img" src="img/bcg-network/photo1.png" alt="Cafe">
@@ -351,10 +307,14 @@
         </div>
     </div>
 </section>
-	    <footer class="foo" id="contact">
+	</main>
+	<footer class="foo" id="contact">
+    <!-- Parallax -->
+    <div class="f">
         <div class="foo-scene foo-layer1" data-speed="10"></div>
         <div class="foo-scene foo-layer2" data-speed="40"></div>
         <div class="foo-scene foo-layer3" data-speed="80"></div>
+    </div>
 
     <div class="container">
         <h2 class="title">
@@ -362,31 +322,36 @@
             and we will call you
         </h2>
 
-        <form class="foo-form" method="POST" id="foo-form">
-            <div class="foo-input-wrapp">
-                <input class="foo-input" type="text" placeholder="Your name" required>
-            </div>
-            <div class="foo-input-wrapp">
-                <input class="foo-input" type="number" placeholder="Phone number" required>
-            </div>
-            <button class="foo-btn-call" form="foo-form">Call Back
-                <svg class="foo-btn-icon" width="36" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.038a1 1 0 100 2v-2zm32 1v1h2.414l-1.707-1.707-.707.707zM24.707.331a1 1 0 10-1.414 1.414L24.707.331zM1 11.038h32v-2H1v2zm32.707-1.707l-9-9-1.414 1.414 9 9 1.414-1.414z" fill="#fff"/></svg>
-            </button>
-        </form>
-    </div>
-</footer>
-
-	<section class="logo">
-    <div class="container">
-        <div class="logo-wrapp">
-            <p class="logo-author">© Classic Family Restaurant</p>
-            <a href="index.html" class="logo-img">
-                <img src="img/header/logo.png" alt="logo">
-            </a>
-            <p class="logo-desc">Made with delight by <span class="logo-desc-bold">harmuder</span></p>
+        <div class="foo__contact-form">
+            <form class="contact-form" method="POST" id="contact-form">
+                <div class="contact-form-wrapp">
+                    <input class="contact-input" type="text" placeholder="Your name" required>
+                </div>
+                <div class="contact-form-wrapp">
+                    <input class="contact-input" type="tel" placeholder="Phone number" required>
+                </div>
+                <button class="contact-btn-call" form="contact-form">Call Back
+                    <svg class="contact-btn-icon" width="36" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.038a1 1 0 100 2v-2zm32 1v1h2.414l-1.707-1.707-.707.707zM24.707.331a1 1 0 10-1.414 1.414L24.707.331zM1 11.038h32v-2H1v2zm32.707-1.707l-9-9-1.414 1.414 9 9 1.414-1.414z" fill="#fff"/></svg>
+                </button>
+            </form>
         </div>
     </div>
-</section>
+
+    <!-- Logo and Author -->
+        <div class="foo__logo">
+            <div class="container">
+                <div class="logo-wrapp">
+                    <p class="logo-author">© Classic Family Restaurant</p>
+                    <a href="index.html" class="logo-img">
+                        <img src="img/header/logo.png" alt="logo">
+                    </a>
+                    <p class="logo-desc">Made with delight by <span class="logo-desc-bold">harmuder</span></p>
+                </div>
+            </div>
+        </div> 
+
+</footer>
+
 		<script src="js/app.min.js"></script>
 </body>
 </html>
