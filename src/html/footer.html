@@ -1,13 +1,9 @@
-<!-- <div class="foo-scene">
-    <div></div>
-    <div></div>
-    <div></div>
-</div> -->
 <footer class="foo" id="contact">
-    <div class="foo-scene">
-        <div></div>
-        <div></div>
-        <div></div>
+    <!-- Parallax -->
+    <div class="foo-parallax">
+        <div class="foo-scene foo-layer1" data-speed="10"></div>
+        <div class="foo-scene foo-layer2" data-speed="40"></div>
+        <div class="foo-scene foo-layer3" data-speed="80"></div>
     </div>
 
     <div class="container">
@@ -16,16 +12,32 @@
             and we will call you
         </h2>
 
-        <form class="foo-form" method="POST" id="foo-form">
-            <div class="foo-input-wrapp">
-                <input class="foo-input" type="text" placeholder="Your name" required>
-            </div>
-            <div class="foo-input-wrapp">
-                <input class="foo-input" type="number" placeholder="Phone number" required>
-            </div>
-            <button class="foo-btn-call" form="foo-form">Call Back
-                <svg class="foo-btn-icon" width="36" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.038a1 1 0 100 2v-2zm32 1v1h2.414l-1.707-1.707-.707.707zM24.707.331a1 1 0 10-1.414 1.414L24.707.331zM1 11.038h32v-2H1v2zm32.707-1.707l-9-9-1.414 1.414 9 9 1.414-1.414z" fill="#fff"/></svg>
-            </button>
-        </form>
+        <div class="foo__contact-form">
+            <form class="contact-form" method="POST" id="contact-form">
+                <div class="contact-form-wrapp">
+                    <input class="contact-input" type="text" placeholder="Your name" required>
+                </div>
+                <div class="contact-form-wrapp">
+                    <input class="contact-input input-num" type="tel" placeholder="Phone number" required minlength="12" maxlength="13" name="telNum">
+                </div>
+                <button class="contact-btn-call" form="contact-form">Call Back
+                    <svg class="contact-btn-icon" width="36" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.038a1 1 0 100 2v-2zm32 1v1h2.414l-1.707-1.707-.707.707zM24.707.331a1 1 0 10-1.414 1.414L24.707.331zM1 11.038h32v-2H1v2zm32.707-1.707l-9-9-1.414 1.414 9 9 1.414-1.414z" fill="#fff"/></svg>
+                </button>
+            </form>
+        </div>
     </div>
+
+    <!-- Logo and Author -->
+        <div class="foo__logo">
+            <div class="container">
+                <div class="logo-wrapp">
+                    <p class="logo-author">© Classic Family Restaurant</p>
+                    <a href="index.html" class="logo-img">
+                        <img src="img/header/logo.png" alt="logo">
+                    </a>
+                    <p class="logo-desc">Made with delight by <span class="logo-desc-bold">harmuder</span></p>
+                </div>
+            </div>
+        </div> 
+
 </footer>

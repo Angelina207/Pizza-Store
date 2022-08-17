@@ -1,0 +1,66 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-width: 320px;
+  color: #000;
+  font-family: "Montserrat";
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+button {
+  font-family: "Montserrat";
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 30px;
+    max-width: 708px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 964px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 0 80px;
+    max-width: 1280px;
+  }
+}
+/*# sourceMappingURL=body.css.map */

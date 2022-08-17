@@ -1,0 +1,23 @@
+.hero {
+  padding-top: 50px;
+}
+
+.hero-subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.1rem;
+  padding-top: 18px;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-top: 100px;
+  }
+}
+/*# sourceMappingURL=hero.css.map */

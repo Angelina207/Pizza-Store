@@ -1,0 +1,130 @@
+.network {
+  position: relative;
+  background-color: #fff;
+  overflow-x: hidden;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.container-wrapp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.network__bcg-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bcg-slider-wrapp {
+  position: relative;
+  left: -20%;
+  min-width: 160px;
+  min-height: 160px;
+}
+
+.bcg-slider-wrapp:nth-child(even) {
+  margin: 0 20px;
+}
+
+.bcg-slider-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.bcg-slider-wrapp:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  background-size: contain;
+  background-position: 0 00;
+  width: 100%;
+  height: 100%;
+}
+
+.link-border {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background: linear-gradient(45.04deg, #FD9924 -51.05%, #F65B16 134.89%);
+  top: calc(50% - 98px);
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 70px 90px rgba(253, 55, 36, 0.2), 0px 35px 50px rgba(253, 55, 36, 0.2), 0px 20px 25px rgba(253, 55, 36, 0.2);
+          box-shadow: 0px 70px 90px rgba(253, 55, 36, 0.2), 0px 35px 50px rgba(253, 55, 36, 0.2), 0px 20px 25px rgba(253, 55, 36, 0.2);
+}
+
+.link-inst {
+  border: 2px solid #F97C31FF;
+  padding: 20px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.7rem;
+  border-radius: 10px;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.link-inst:hover,
+.link-inst:focus {
+  border: 2px solid #fff;
+}
+
+.link-inst-bold {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .bcg-slider-wrapp {
+    min-width: 260px;
+    min-height: 260px;
+  }
+  .bcg-slider-wrapp:nth-child(even) {
+    margin: 0 40px;
+  }
+  .link-border {
+    top: calc(50% - 119px);
+  }
+  .link-inst {
+    padding: 38px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bcg-slider-wrapp {
+    min-width: 280px;
+    min-height: 280px;
+    max-width: 460px;
+    max-height: 460px;
+    left: 0;
+  }
+  .link-border {
+    border-radius: 15px;
+    top: calc(50% - 140px);
+  }
+  .link-inst {
+    padding: 55px;
+    font-size: 1.5rem;
+    border-radius: 15px;
+  }
+}
+/*# sourceMappingURL=network.css.map */

@@ -90,6 +90,7 @@
     height: 33px;
     border-radius: 50%;
     background-color: #fff;
+    // border: 2px solid #ECEEF7;
 }
 .btn-bin::after{
     position: absolute;
@@ -98,7 +99,7 @@
     content: '';
     width: 37px;
     height: 37px;
-    background-image: #ECEEF7;
+    background: #ECEEF7;
     display: inline-block;
     border-radius: 50%;
     z-index: -1;
