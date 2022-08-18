@@ -1,4 +1,4 @@
-export function Products() {
+export function products() {
 
 /* Show and hide the total price. */
 

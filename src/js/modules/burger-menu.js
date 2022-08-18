@@ -38,9 +38,6 @@ export function burgerMenu() {
         }
     }
 
-/*
-    Smooth Scroll
-*/
     for (let link of navLinks) {
 
         link.addEventListener('click', (e) => {
@@ -59,5 +56,4 @@ export function burgerMenu() {
             body.style.overflow = 'scroll';
         })
     }
-
 }
