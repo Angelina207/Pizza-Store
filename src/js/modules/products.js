@@ -12,20 +12,4 @@ export function products() {
             totalPrice.style.opacity = '0';
         }
     }
-
-// Current Tab
-    const tabBtn = document.querySelectorAll('.tab-btn');
-    let tabAtribute;
-
-    for (let itemTab of tabBtn) {
-        itemTab.addEventListener('click', e => {
-            tabAtribute = itemTab.dataset.tab;
-
-            if (e.target != tabAtribute) {
-                itemTab.classList.remove('tab-btn-current'); 
-            } else {
-                itemTab.classList.add('tab-btn-current'); 
-            }           
-        })
-    }
 }
